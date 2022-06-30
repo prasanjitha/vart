@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "185717150559",
+    "project_id": "signin-vart",
+    "storage_bucket": "signin-vart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185717150559:android:6f59ed9fa9d161ef7e9cea",
+        "android_client_info": {
+          "package_name": "com.example.vart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185717150559-ga2hathhtfe0uthb5j5h0792602h31dh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2XEOnZG_dBmqLturs9URYka4OX-pV-Uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185717150559-ga2hathhtfe0uthb5j5h0792602h31dh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
