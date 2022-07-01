@@ -16,38 +16,55 @@ class SelectPossition extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 100.0),
-              Image.asset('assets/images/loading.png'),
+              Padding(
+                padding: const EdgeInsets.only(right: 280.0,top: 20.0),
+                child: InkWell(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.grey,
+          ),
+        ),
+              ),
               const SizedBox(height: 80.0),
+              Image.asset('assets/images/loading.png'),
+              const SizedBox(height: 60.0),
               CustomColorButton(
                 text: 'Admin',
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(possition: 'admin',),
+                      builder: (context) => const LoginPage(
+                        possition: 'admin',
+                      ),
                     ),
                   );
                 },
               ),
-              const SizedBox(height:20.0),
+              const SizedBox(height: 20.0),
               CustomColorButton(
                 text: 'Buyer',
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(possition: 'buyer',),
+                      builder: (context) => const LoginPage(
+                        possition: 'buyer',
+                      ),
                     ),
                   );
                 },
               ),
-              const SizedBox(height:20.0),
-
+              const SizedBox(height: 20.0),
               CustomColorButton(
                 text: 'Seller',
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(possition: 'seller',),
+                      builder: (context) => const LoginPage(
+                        possition: 'seller',
+                      ),
                     ),
                   );
                 },
