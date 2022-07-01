@@ -1,21 +1,26 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:vart/screens/home_screen.dart';
-import 'package:vart/screens/register_page.dart';
-import 'package:vart/screens/reser_password_page.dart';
+import 'package:vart/screens/buyer/buyer_home.dart';
 import 'package:vart/widgets/custom_button.dart';
 import 'package:vart/widgets/custom_text_deild.dart';
 
+import '../admin/admin_home.dart';
+import '../seller/add_item.dart';
+import 'register_page.dart';
+import 'reser_password_page.dart';
+
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final String possition;
+  const LoginPage({Key? key, this.possition = 'defalut'}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController _emailTextEdditingController = TextEditingController();
-  TextEditingController _passwordTextEdditingController =
+  final TextEditingController _emailTextEdditingController =
+      TextEditingController();
+  final TextEditingController _passwordTextEdditingController =
       TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -62,17 +67,20 @@ class _LoginPageState extends State<LoginPage> {
                   isPasswordType: true,
                   text: 'Password'),
               Padding(
-                padding: const EdgeInsets.only(right: 0,top: 10.0,left: 250),
+                padding: const EdgeInsets.only(right: 0, top: 10.0, left: 250),
                 child: InkWell(
-                   onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const ResetPassword(),
-                        ),
-                      );
-                    },
-                  child: const Text('Forgot password',  style: TextStyle(color: Color(0xFF667EEA), fontSize: 16),
-                  textAlign: TextAlign.end,),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ResetPassword(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Forgot password',
+                    style: TextStyle(color: Color(0xFF667EEA), fontSize: 16),
+                    textAlign: TextAlign.end,
+                  ),
                 ),
               ),
               const SizedBox(
@@ -89,12 +97,25 @@ class _LoginPageState extends State<LoginPage> {
                       .then(
                     (value) {
                       showAlertDialog(context);
-
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                        ),
-                      );
+                      if (widget.possition == 'admin') {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const AdminHome(),
+                          ),
+                        );
+                      } else if (widget.possition == 'buyer') {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const BuyerHome(),
+                          ),
+                        );
+                      } else if (widget.possition == 'seller') {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const AddItem(),
+                          ),
+                        );
+                      }
                     },
                   ).onError((error, stackTrace) {
                     showAlertDialog(context);
@@ -142,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
     // set up the buttons
 
     Widget continueButton = TextButton(
-      child: Text("ok"),
+      child: const Text("ok"),
       onPressed: () {
         Navigator.of(context).pop();
       },

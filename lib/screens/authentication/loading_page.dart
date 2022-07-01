@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vart/screens/login_page.dart';
-import 'package:vart/screens/register_page.dart';
 import 'package:vart/widgets/custom_button.dart';
+
+import 'register_page.dart';
+import 'select_possition.dart';
 
 class LoadingPage extends StatelessWidget {
   const LoadingPage({Key? key}) : super(key: key);
@@ -11,12 +12,12 @@ class LoadingPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 30.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 80.0),
+              const SizedBox(height: 60.0),
               const Text(
                 'Welcome to Bolt',
                 style: TextStyle(color: Color(0xFF707070), fontSize: 20),
@@ -25,14 +26,14 @@ class LoadingPage extends StatelessWidget {
                 'Explore Us',
                 style: TextStyle(color: Color(0xFF707070), fontSize: 18),
               ),
-              const SizedBox(height: 120.0),
+              const SizedBox(height: 80.0),
               Image.asset('assets/images/loading.png'),
               const SizedBox(height: 80.0),
               CustomColorButton(
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) => const SelectPossition(),
                     ),
                   );
                 },
