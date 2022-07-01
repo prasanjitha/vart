@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:vart/screens/home_screen.dart';
-import 'package:vart/screens/login_page.dart';
 import 'package:vart/widgets/custom_button.dart';
 import 'package:vart/widgets/custom_text_deild.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'login_page.dart';
+import 'select_possition.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -14,9 +14,11 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  TextEditingController _nameTextEdditingController = TextEditingController();
-  TextEditingController _emailTextEdditingController = TextEditingController();
-  TextEditingController _passwordTextEdditingController =
+  final TextEditingController _nameTextEdditingController =
+      TextEditingController();
+  final TextEditingController _emailTextEdditingController =
+      TextEditingController();
+  final TextEditingController _passwordTextEdditingController =
       TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -86,7 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     print('Created new account');
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                        builder: (context) => const SelectPossition(),
                       ),
                     );
                   }).onError((error, stackTrace) {

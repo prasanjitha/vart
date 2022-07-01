@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vart/screens/login_page.dart';
 import 'package:vart/widgets/custom_button.dart';
 import 'package:vart/widgets/custom_text_deild.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'login_page.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class ResetPassword extends StatefulWidget {
 }
 
 class _ResetPasswordState extends State<ResetPassword> {
-  TextEditingController _emailTextEdditingController = TextEditingController();
+  final TextEditingController _emailTextEdditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
