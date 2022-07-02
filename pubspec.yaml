@@ -41,6 +41,19 @@ dependencies:
   path: ^1.8.1
   firebase_storage: ^10.2.7
   image_picker: ^0.8.4+9
+  provider: ^6.0.3
+  map_pin_picker:
+
+
+
+  google_maps_flutter:
+  location:
+  location_permissions:
+  geolocator:
+  google_geocoding:
+
+  permission_handler:
+  flutter_svg: ^1.1.0
 
 dev_dependencies:
   flutter_test:
