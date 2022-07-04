@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:vart/screens/buyer/buyer_home.dart';
 import 'package:vart/widgets/custom_button.dart';
 import 'package:vart/widgets/custom_text_deild.dart';
-
 import '../admin/admin_home.dart';
 import '../seller/add_item.dart';
 import 'register_page.dart';
@@ -96,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                           password: _passwordTextEdditingController.text)
                       .then(
                     (value) {
-                      showAlertDialog(context);
+                      //showAlertDialog(context);
                       if (widget.possition == 'admin') {
                         Navigator.of(context).push(
                           MaterialPageRoute(
