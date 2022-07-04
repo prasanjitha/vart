@@ -32,7 +32,7 @@ class SelectPossition extends StatelessWidget {
               Image.asset('assets/images/loading.png'),
               const SizedBox(height: 60.0),
               CustomColorButton(
-                text: 'Admin',
+                text: 'Traveler',
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -45,7 +45,7 @@ class SelectPossition extends StatelessWidget {
               ),
               const SizedBox(height: 20.0),
               CustomColorButton(
-                text: 'Buyer',
+                text: 'Guider',
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -58,7 +58,7 @@ class SelectPossition extends StatelessWidget {
               ),
               const SizedBox(height: 20.0),
               CustomColorButton(
-                text: 'Seller',
+                text: 'Admin',
                 tap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(

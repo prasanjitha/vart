@@ -14,7 +14,7 @@ class _MyLocationsState extends State<MyLocations> {
     return Scaffold(
         body: Column(
       children: [
-        CustomGoogleMap(),
+        //CustomGoogleMap(),
       ],
     ));
   }
